@@ -860,6 +860,9 @@ h3 {
 .callali{
     background-image: url('./imagenes/callali.jpg');
 }
+.sibayo{
+    background-image: url('./imagenes/sibayo.jpg');
+}
 .texto {
     position: absolute;
     top: 50%;
@@ -869,4 +872,57 @@ h3 {
     color: white;
     font-weight: bold;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+
+.dtnccl1 {
+    width: 60%;
+    margin: 0px 20vw;
+    padding: 50px 50px 10px 50px;
+}
+
+.dtnccl1 h1 {
+    font-size: 60px;
+    margin-bottom: 20px;
+}
+
+.dtnccl1 h2 {
+    font-size: 40px;
+    margin: 20px 0px;
+
+}
+
+.dtnccl1 h3 {
+    font-size: 25px;
+    margin: 20px 0px;
+
+}
+
+.dtnccl1 h4 {
+    font-size: 24px;
+    margin: 20px 0px;
+    font-weight: 500;
+}
+
+.dtnccl1 h5 {
+    font-size: 18px;
+    margin: 0px 10px;
+    font-weight: bold;
+}
+.dtnccl1 li{
+    font-size: 20px;
+    line-height: 1.8;
+}
+.dtnccl1 strong{
+    font-weight: 500;
+}
+.alingphoto{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 30px 0px;
+}
+.alingphoto img{
+    width: 100%;
+    height: auto;
 }
