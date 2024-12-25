@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Cómo Llegar?</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.css">
+</head>
+
+
+<body>
+    <header>
+        <div class="portadacm">
+            <h2>¿Como llegar?</h2>
+        </div>
+
+    </header>
+    <nav class="navbar">
+        <span class="menu-toggle" onclick="toggleMenu()">☰</span>
+        <ul id="navbarMenu">
+            <li><a href="/">Inicio</a></li>
+            <li><a href="comollegar.html">¿Cómo Llegar?</a></li>
+            <li><a href="destinos.html">Destinos</a></li>
+            <li><a href="actividades.html">Actividades</a></li>
+            <li><a href="informacion.html">Información</a></li>
+            <li><a href="consejos.html">Consejos</a></li>
+        </ul>
+    </nav>
+    <section class="cabeceracl">
+        <h2> <span style="color: #47b72f;">Arequipa</span> - Chivay</h2>
+        <div class="clgroup">
+            <div class="clgroup_left">
+                <div id="map" style="height: 400px;"></div>
+                <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+                <script src="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.js"></script>
+                <script>
+                    const map = L.map('map').setView([-16.423004, -71.544452], 10);
+
+                    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                        maxZoom: 19,
+                        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                    }).addTo(map);
+
+                    const arequipa = L.latLng(-16.423004, -71.544452);
+                    const chivay = L.latLng(-15.638762, -71.600755);
+
+                    const customIcon = L.icon({
+                        iconUrl: 'https://cdn-icons-png.flaticon.com/512/3699/3699580.png', // Cambia el ícono de los marcadores
+                        iconSize: [32, 32],
+                        iconAnchor: [16, 32],
+                        popupAnchor: [0, -32]
+                    });
+
+                    L.marker(arequipa, { icon: customIcon }).addTo(map).bindPopup('Arequipa');
+
+                    L.marker(chivay, { icon: customIcon }).addTo(map).bindPopup('Chivay');
+
+                    const control = L.Routing.control({
+                        waypoints: [
+                            arequipa,
+                            chivay
+                        ],
+                        routeWhileDragging: false,
+                        show: false,
+                        createMarker: function (i, waypoint, n) {
+                            return L.marker(waypoint.latLng, {
+                                icon: customIcon
+                            });
+                        },
+                        lineOptions: {
+                            styles: [{ color: '#47b72f', weight: 4 }]
+                        }
+                    }).addTo(map);
+
+                    control.on('routesfound', function (e) {
+                        const bounds = L.latLngBounds(arequipa, chivay);
+                        map.fitBounds(bounds);
+                    });
+                </script>
+
+
+            </div>
+
+
+
+        </div>
+
+    </section>
+    <p class="dtlp">El Cañón del Colca es uno de los destinos turísticos más impresionantes del Perú, famoso por su
+        belleza natural, sus paisajes espectaculares y la posibilidad de avistar cóndores. A continuación, te detallo
+        las diferentes formas de llegar y algunos consejos para disfrutar al máximo de tu visita.
+        El Cañón del Colca se encuentra en la región de Arequipa, a aproximadamente 160 kilómetros al norte de la ciudad
+        de Arequipa. La forma más común de llegar es desde esta ciudad.
+
+    </p>
+    <div class="cmlg">
+        <section class="sctctn">
+            <h2 class="clh2">Desde Arequipa</h2>
+            <div class="dsdaqp">
+                <div class="dsdaqpctn">
+                    <h3>Transporte en Bus</h3>
+                    <p>La forma más común y económica de
+                        llegar al Cañón del Colca es mediante autobuses. <span style="font-weight: bold;">Partiendo
+                            desde el terminal terrestre de Arequipa</span>
+                        Aquí te
+                        contamos cómo:</p><br>
+
+                    <p><strong>Compra de boletos:</strong></p>
+                    <p><span style="font-weight: bold;">Donde: </span> Puedes comprar boletos en la terminal de
+                        autobuses de Arequipa (Terminal Terrestre).</p>
+                    <p><strong>Compañías recomendadas:</strong></p>
+                    <li><span style="font-weight: bold;">Trasandino:</span> Especializada en rutas hacia el Colca, ideal
+                        para viajes directos.</li>
+                    <li><span style="font-weight: bold;">Reyna:</span> Especializada en rutas hacia el Colca, ideal para
+                        viajes directos.</li>
+                    <li><span style="font-weight: bold;">Milagros:</span> Especializada en rutas hacia el Colca, ideal
+                        para viajes directos.</li>
+
+                    <p><strong>Horarios y Tarifas:</strong></p>
+                    <p>Los buses suelen salir entre las 1:00am y las 1:00pm del mediodía y
+                        las tarifas rondan entre S/.30 y S/.25 soles.</p>
+                    <p>Es recomendable comprar los boletos con anticipación, especialmente en temporada alta.</p><br>
+
+                    <p><strong>Duración del viaje:</strong>Estas rutas parten de Arequipa, pasando por Chivay, Yanque,
+                        Macca,Pinchollo, Cruz del Condor y finalmente Cabanconde,
+                        Aproximadamente tiene una duracion de 6 horas, dependiendo del tráfico y las
+                        paradas.</p>
+                </div>
+
+
+                <div class="dsdaqpctn">
+                    <h3>Tour Guiado</h3>
+                    <p>Si prefieres una experiencia más completa, considera un tour guiado que incluya transporte y
+                        actividades adicionales.</p>
+
+                    <p><strong>Beneficios:</strong> Los tours suelen incluir paradas en puntos de interés como el
+                        mirador de la Cruz del Cóndor, y a veces incluyen almuerzos.</p>
+                    <p><strong>Duración:</strong> Generalmente son tours de un día, aunque hay opciones de 2 días que
+                        incluyen una noche en Chivay.</p>
+                    <p><strong>Precios:</strong> Los precios varían, pero un tour de un día puede costar entre S/. 100 y
+                        S/. 200 por persona, incluyendo transporte y almuerzo.</p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="sctctn">
+            <h2 class="clh2">En Coche</h2>
+            <div class="dsdaqpch">
+
+                <article>
+                    <h3>Alquiler de Vehículo</h3>
+                    <p>Alquilar un coche es una excelente opción si prefieres viajar a tu ritmo. Aquí hay algunos
+                        consejos:
+                    </p><br>
+                    <ul>
+                        <p><strong>Ruta Recomendada:</strong> Desde Arequipa, toma la carretera hacia <em>Yura</em>,
+                            luego
+                            sigue hacia <em>Pampa Canahuas</em> y continúa hasta <em>Chivay</em>, el punto de entrada al
+                            Cañón
+                            del Colca.</p>
+                        <p><strong>Distancia:</strong> Aproximadamente 150 km (93 millas), que toma entre 3 y 4 horas,
+                            dependiendo de las condiciones de la carretera.</p>
+                        <p><strong>Consejos de Conducción:</strong> Las carreteras pueden ser sinuosas y de alta
+                            montaña.
+                            Conduce con precaución y ten en cuenta que el clima puede cambiar rápidamente.</p>
+                    </ul><br>
+                    <p>Asegúrate de tener suficiente combustible, ya que
+                        las estaciones de servicio son escasas en el camino.</p>
+                </article>
+            </div>
+
+        </section>
+
+        <section class="sctctn">
+
+            <h2 class="clh2">Opciones de Transporte Alternativas</h2>
+            <div class="dsdaqp">
+
+                <div class="dsdaqpctn">
+
+                    <article>
+                        <h3>Taxi o Servicio de Transporte Privado</h3>
+                        <p>Otra opción es contratar un taxi o un servicio de transporte privado. Aquí algunos puntos a
+                            considerar:
+                        </p><br>
+                        <ul>
+                            <p><strong>Costos:</strong> Puede costar entre S/. 300 y S/. 500, dependiendo de la
+                                negociación
+                                y
+                                el
+                                servicio.</p>
+                            <p><strong>Duración:</strong> Similar al viaje en bus, entre 3 y 4 horas.</p>
+                        </ul>
+                        <p>Puede ser recomendable si haces un viaje en grupo </p>
+                    </article>
+                </div>
+                <div class="dsdaqpctn">
+
+
+                    <article>
+                        <h3>Transportes Públicos Locales</h3>
+                        <p>Existen minivans o colectivos que van de Arequipa a Chivay.
+                            Salen desde la terminal de buses o Terminales privados de la empresa. Generalmente esta
+                            por los alrededores del terminal terrestre.
+                        </p><br>
+                        <ul>
+                            <p><strong>Frecuencia:</strong> Suelen salir en intervalos de media hora o una hora
+                                dependiendo de la demanda.
+                            </p>
+                            <p><strong>Duración:</strong> Aproximadamente 3 horas.</p>
+                        </ul><br>
+                        <p>El paradero final es el terminal terrestre de Chivay, desde este punto puedes encontrar
+                            colectivos a
+                            diferentes distritos del Cañon del Colca, Con precios muy economicos.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <section id="consejos-utiles" style="margin-bottom: 100px;">
+            <h2 class="clh2">Consejos Útiles</h2>
+            <div class="dsdaqpch">
+
+                <ul>
+                    <p><strong>Aclimatación:</strong> El Cañón del Colca se encuentra a una altitud considerable. Es
+                        recomendable aclimatarse en Arequipa antes de viajar, o llevar meidcamento que ayude a controlar
+                        el mal de altura</p>
+                    <p><strong>Reservas:</strong> Haz reservas anticipadas para buses o tours, especialmente en
+                        temporada
+                        alta.
+                    </p>
+                    <p><strong>Comida y agua:</strong> Lleva agua y snacks, ya que algunas áreas pueden no tener
+                        tiendas
+                        cercanas.</p>
+                    <p><strong>Dinero:</strong> Trata de llevar dinbero en efectivo ya que en muchos lugares no podras
+                        pagar contarjeta
+                        o aplicativos moviles.
+                    </p>
+                    <p><strong>Planifica paradas:</strong> No dudes en detenerte en los miradores y pueblos a lo largo
+                        del camino. Cada parada puede ofrecerte una experiencia única y enriquecedora.
+
+                    </p>
+                </ul>
+            </div>
+        </section>
+
+
+    </div>
+    <div class="ftg_cl">
+        <h2 class="clh2" style="text-align: center; margin-top: 100px;">Paradas Turisticas</h2>
+        <div class="division" style="margin: 25px 45vw;"></div>
+        <p class="dcrftg_cl">A lo largo del camino desde Arequipa hacia el Cañón del
+            Colca, al pie del trayecto encontrarás una variedad de atractivos turísticos
+            que enriquecerán tu experiencia. Esta ruta te ofrece la oportunidad
+            de descubrir una abundante diversidad de flora y fauna, así como paisajes
+            sobrecogedores. Cada parada te sorprenderá con vistas únicas y
+            encantadoras. No es solo un viaje hacia un destino impresionante,
+            sino una invitación a explorar la belleza natural y cultural de
+            la región. Aprovecha para detenerte, disfrutar de los encantos locales
+            e interactuar con la comunidad.
+        </p>
+        <div class="gall_ftg_cl">
+            <div class="img_gall_ftg_cl">
+                <img src="https://conresatours.com.pe/wp-content/uploads/2016/08/Pampa-Caniahuas_07_Big.jpg" alt="">
+                <h4>Pampa Cañahuas</h4>
+            </div>
+            <div class="img_gall_ftg_cl">
+                <img src="https://media-cdn.tripadvisor.com/media/photo-s/05/8a/f7/5f/colca-lodge-spa-hot-springs.jpg"
+                    alt="">
+                <h4>Criaderos de Alpacas</h4>
+            </div>
+            <div class="img_gall_ftg_cl">
+                <img src="https://media-cdn.tripadvisor.com/media/photo-s/07/eb/50/19/san-miguel-viewpoint.jpg" alt="">
+                <h4>Mirador de los Volcanes</h4>
+            </div>
+            <div class="img_gall_ftg_cl">
+                <img style="height: 333px !important;"
+                    src="https://media-cdn.tripadvisor.com/media/photo-s/18/62/b4/2c/la-route-entre-chivay.jpg" alt="">
+                <h4>Paisajes</h4>
+            </div>
+
+            <div class="img_gall_ftg_cl">
+                <img src="https://images.unsplash.com/photo-1623610298716-6a559d7577d2?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    alt="">
+                <h4>Nevados</h4>
+            </div>
+            <div class="img_gall_ftg_cl">
+                <img src="https://images.unsplash.com/photo-1663188783030-1206a3226345?q=80&w=1931&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    alt="">
+                <h4>Miradores</h4>
+            </div>
+            <div class="img_gall_ftg_cl">
+                <img src="https://images.unsplash.com/photo-1685579078024-6bedd1d95c72?q=80&w=1931&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    alt="">
+                <h4>Pueblo de Maca</h4>
+            </div>
+            <div class="img_gall_ftg_cl">
+                <img src="https://terandes.com/wp-content/uploads/2023/01/Condor-del-Colca-1-900x675.webp" alt="">
+                <h4>Cruz del Condor</h4>
+            </div>
+            <div class="img_gall_ftg_cl">
+                <img src="https://freewalkingtoursperu.com/wp-content/uploads/2024/02/como-llegar-canon-colca_3.webp"
+                    alt="">
+                <h4>Cañon</h4>
+            </div>
+            <div class="img_gall_ftg_cl">
+                <img src="https://www.viajandoporelmundomundial.com/wp-content/uploads/2024/04/bailes-colca-peru.jpg"
+                    alt="">
+                <h4>Pueblo de Yanque</h4>
+            </div>
+            <div class="img_gall_ftg_cl">
+                <img src="https://www.machupicchuterra.com/wp-content/uploads/volcan-sabancaya-full.jpg" alt="">
+                <h4>Volcanes</h4>
+            </div>
+            <div class="img_gall_ftg_cl">
+                <img src="https://i.pinimg.com/564x/da/db/7b/dadb7bbc249e684ca8dcd9857991cdfb.jpg" alt="">
+                <h4>Artesanias</h4>
+            </div>
+        </div>
+        <div>
+            <div class="diffapp" style="margin-top: 150px;">
+
+                <h2 class="clh2 centeralin">Mirador Cruz del Cóndor</h2>
+                <p class="dcrftg_cl">Experiencia: Imagina estar en el corazón de los Andes, con el aire fresco y el
+                    cielo despejado sobre ti. Desde el <strong>Mirador Cruz del Cóndor</strong>, serás testigo de uno de
+                    los vuelos más majestuosos de la naturaleza. El cóndor andino, el ave voladora más grande del mundo,
+                    se despliega ante tus ojos en un espectáculo único. Además, el <strong>Cañón del Colca</strong> se
+                    despliega a tus pies, mostrando su asombrosa profundidad, dejando una huella imborrable en tu
+                    memoria. ¡Un lugar donde la majestuosidad de la naturaleza te dejará sin aliento!</p>
+            </div>
+
+            <h2 class="clh2 centeralin">Volcán Misti (Arequipa)</h2>
+            <p class="dcrftg_cl">Experiencia: El <strong>volcán Misti</strong> es mucho más que una imponente montaña;
+                es un desafío para los aventureros de todo el mundo. Imagina estar ascendiendo por sus laderas,
+                enfrentando el reto mientras el paisaje cambia a tu alrededor. Y cuando llegues a la cima, una vista
+                panorámica de <strong>Arequipa</strong> y sus valles te recompensará con una sensación de logro única.
+                ¡Un destino para quienes buscan aventura, adrenalina y vistas que solo los valientes pueden conquistar!
+            </p>
+            <div class="diffapp">
+
+                <h2 class="clh2 centeralin">Pueblo de Yanque</h2>
+                <p class="dcrftg_cl">Experiencia: En <strong>Yanque</strong>, el tiempo parece detenerse. Este
+                    pintoresco pueblo, rodeado de paisajes verdes y montañas imponentes, te invita a adentrarte en un
+                    mundo lleno de tradiciones ancestrales. Vive la experiencia de ver las <strong>terrazas agrícolas
+                        preincaicas</strong> y déjate envolver por la alegría del <strong>baile de la Danzarina de
+                        Yanque</strong>. Aquí, la calidez de la gente y las tradiciones vivas te harán sentir como parte
+                    de esta vibrante comunidad. ¡Una verdadera conexión con la cultura andina!</p>
+            </div>
+
+            <h2 class="clh2 centeralin">Pueblo de Maca</h2>
+            <p class="dcrftg_cl">Experiencia: En el <strong>pueblo de Maca</strong>, la historia y la cultura se viven
+                en cada rincón. Admira su iglesia colonial mientras los ecos de las <strong>danzas folclóricas</strong>
+                como el "Huayno" te envuelven en un ambiente festivo y lleno de color. Las festividades religiosas y la
+                vida rural te permitirán descubrir una forma de vida auténtica, donde la tradición sigue viva en cada
+                paso. ¡Un lugar donde la fe, la música y las costumbres se fusionan para ofrecer una experiencia única!
+            </p>
+            <div class="diffapp">
+                <h2 class="clh2 centeralin">Mirador de Pata Pampa</h2>
+                <p class="dcrftg_cl">Experiencia: En el <strong>Mirador de Pata Pampa</strong>, a más de 4,800 metros
+                    sobre el nivel del mar, sentirás que el cielo es más cercano. La <strong>cadena de
+                        volcanes</strong>, como el <strong>Sabancaya</strong> y el <strong>Ampato</strong>, se alzan
+                    imponentes ante ti, mientras el aire fresco de las alturas llena tus pulmones. Este es el lugar
+                    perfecto para dejarte maravillar por la vastedad de los Andes, donde la majestuosidad de la
+                    naturaleza te rodea en cada dirección. ¡Una vista que te dejará sin palabras!</p>
+
+            </div>
+
+            <h2 class="clh2 centeralin">Reserva Nacional de Salinas y Aguada Blanca</h2>
+            <p class="dcrftg_cl">Experiencia: En la <strong>Reserva Nacional de Salinas y Aguada Blanca</strong>, serás
+                testigo de la belleza natural de los Andes, con vastas llanuras desérticas que contrastan con las
+                tranquilas lagunas salinas. Aquí, podrás avistar <strong>vicuñas</strong>, <strong>alpacas</strong> y
+                <strong>guanacos</strong> en su hábitat natural, rodeados de un paisaje que parece salido de otro mundo.
+                Si buscas serenidad, belleza y una conexión profunda con la naturaleza, este es el lugar ideal. ¡Un
+                paraíso para los amantes de la fauna y la fotografía!</p>
+            <div class="diffapp">
+
+                <h2 class="clh2 centeralin">Volcán Sabancaya</h2>
+                <p class="dcrftg_cl">Experiencia: El <strong>Sabancaya</strong> no es solo un volcán, ¡es una aventura
+                    en sí mismo! Uno de los volcanes más activos del mundo, este coloso te invita a explorar sus
+                    alrededores mientras te maravillas con su imponente poder. En los tours guiados, podrás ver de cerca
+                    su actividad volcánica, escuchando las historias sobre su misterio y su fuerza destructiva. ¡Siente
+                    la emoción de estar tan cerca de la naturaleza en su forma más pura y explosiva!</p>
+            </div>
+
+            <h2 class="clh2 centeralin">Pueblo de Achoma</h2>
+            <p class="dcrftg_cl">Experiencia: En <strong>Achoma</strong>, cada calle es una lección de historia y cada
+                persona, un guardián de las tradiciones. Este pequeño pueblo del Valle del Colca, con sus
+                <strong>terrazas de cultivo preincaicas</strong>, te permitirá viajar al pasado, mientras aprendes sobre
+                las antiguas técnicas agrícolas. Las <strong>fiestas patronales</strong> en Achoma, llenas de música y
+                danza, te sumergirán en una experiencia cultural única. ¡Un rincón escondido donde la vida sigue
+                fluyendo al ritmo de las costumbres ancestrales!</p>
+            <div class="diffapp">
+
+                <h2 class="clh2 centeralin">Bailes Tradicionales en el Valle del Colca</h2>
+                <p class="dcrftg_cl">Experiencia: Imagina ser parte de una fiesta en el corazón de los Andes, donde las
+                    <strong>danzas tradicionales</strong> como el <strong>Huayno</strong> te invitan a moverte al ritmo
+                    de los tambores y las flautas. En <strong>Chivay</strong>, <strong>Yanque</strong> o
+                    <strong>Maca</strong>, las festividades son un espectáculo lleno de colores, música y emoción.
+                    Sumérgete en una atmósfera vibrante y festiva que te hará sentir la verdadera esencia del Valle del
+                    Colca. ¡Un carnaval de tradiciones que te emocionará!</p>
+            </div>
+
+            <h2 class="clh2 centeralin">Pueblo de Coporaque</h2>
+            <p class="dcrftg_cl">Experiencia: En el pequeño pueblo de <strong>Coporaque</strong>, la vida transcurre al
+                ritmo de la naturaleza. Sus <strong>terrazas de cultivo</strong> ofrecen una mirada fascinante a la
+                agricultura ancestral, mientras que las <strong>fiestas locales</strong> llenan las calles con música,
+                danza y alegría. Aquí, los turistas tienen la oportunidad de compartir con los habitantes y experimentar
+                de primera mano la calidez de los andinos. ¡Un lugar donde cada rincón tiene una historia que contar!
+            </p>
+            <div class="diffapp">
+
+                <h2 class="clh2 centeralin">Mirador de los Andes</h2>
+                <p class="dcrftg_cl">Experiencia: El <strong>Mirador de los Andes</strong> es el lugar donde te sentirás
+                    en la cima del mundo. Con vistas panorámicas de los <strong>volcanes Sabancaya</strong>,
+                    <strong>Ampato</strong> y <strong>Hualca Hualca</strong>, es el lugar ideal para admirar la grandeza
+                    de los Andes. Desde aquí, podrás ver el contraste entre las montañas nevadas y los valles verdes, un
+                    paisaje que te hará sentir pequeño ante la inmensidad de la naturaleza. ¡Un mirador que te robará el
+                    aliento!</p>
+            </div>
+
+            <h2 class="clh2 centeralin">Cultura Local y Gastronomía Andina</h2>
+            <p class="dcrftg_cl">Experiencia: El <strong>Valle del Colca</strong> no solo te sorprenderá con su paisaje,
+                sino también con sus sabores. Desde el <strong>rocoto relleno</strong> hasta la <strong>chupe de
+                    camarones</strong> y la deliciosa <strong>trucha del Colca</strong>, cada plato es un festín de
+                tradición y frescura. Además, participar en actividades de <strong>agroturismo</strong> te permitirá
+                aprender sobre el cultivo de la <strong>papa</strong> y el <strong>maíz</strong>, productos emblemáticos
+                de la región. ¡Una oportunidad para saborear la auténtica gastronomía andina y llevarte un pedazo de la
+                cultura local a casa!</p>
+        </div>
+
+    </div>
+    <div class="division1" style="width: 50vw; margin: 0px 25vw;"></div>
+    <footer style="background-color: #111326;">
+        <p style="color: white !important;">&copy; 2024 Mi Página Web</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
