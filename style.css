@@ -496,7 +496,6 @@ strong {
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    /* Efecto parallax */
 }
 
 
@@ -844,6 +843,7 @@ h3 {
     width: 100vw;
     height: 500px;
     position: relative;
+    margin: 100px 0px 0px 0px;
 }
 .chivay{
     background-image: url('./imagenes/calera.jpg');
