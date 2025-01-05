@@ -654,6 +654,7 @@ strong {
     .menu-toggle {
         display: block;
     }
+
     .navbar {
         justify-content: flex-end;
     }
@@ -870,26 +871,44 @@ h3 {
 
 .chivay {
     background-image: url('./imagenes/calera.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .yanque {
     background-image: url('./imagenes/yanque.gif');
+    background-position: center;
+background-size: cover;
+background-repeat: no-repeat;
 }
 
 .cabanaconde {
     background-image: url('./imagenes/cabanaconde.jpg');
+    background-position: center;
+background-size: cover;
+background-repeat: no-repeat;
 }
 
 .maca {
     background-image: url('./imagenes/maca.jpg');
+    background-position: center;
+background-size: cover;
+background-repeat: no-repeat;
 }
 
 .callali {
     background-image: url('./imagenes/callali.jpg');
+    background-position: center;
+background-size: cover;
+background-repeat: no-repeat;
 }
 
 .sibayo {
     background-image: url('./imagenes/sibayo.jpg');
+    background-position: center;
+background-size: cover;
+background-repeat: no-repeat;
 }
 
 .texto {
@@ -1076,7 +1095,8 @@ h3 {
         width: 85vw;
         margin: 0px 7.5vw;
     }
-    .skiptranslate{
+
+    .skiptranslate {
         width: 100vw;
     }
 }
@@ -1269,7 +1289,8 @@ h3 {
     p {
         line-height: 1.5;
     }
-    .skiptranslate{
+
+    .skiptranslate {
         width: 100vw;
     }
 }
@@ -1462,7 +1483,8 @@ h3 {
     p {
         line-height: 1.5;
     }
-    .skiptranslate{
+
+    .skiptranslate {
         width: 100vw;
     }
 }
