@@ -110,7 +110,9 @@ h2 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center
+    justify-content: center;
+    height: auto;
+    flex-wrap: wrap;
 }
 
 .imgdcpc_1 {
@@ -586,66 +588,84 @@ strong {
 
 
 /*Navbar*/
+
 .navbar {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #333;
-    height: 60px;
-    background-color: #1ecd56;
+    background-color: #47b72f;
+    padding: 15px 30px;
+    position: relative;
+    color: white;
 }
-
 
 .navbar ul {
-    list-style: none;
     display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
-.navbar ul li {
-    margin-left: 15px;
+.navbar li {
+    margin: 0 15px;
 }
 
-.navbar ul li a {
-    color: #fff;
+.navbar a {
+    color: white;
     text-decoration: none;
-    padding: 8px 12px;
-    transition: background-color 0.3s;
-    font-size: 20px;
+    font-size: 16px;
+    padding: 8px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
 }
 
-.navbar ul li a:hover {
-    background-color: #000000;
-
+.navbar a:hover {
+    background-color: #444;
 }
 
 .menu-toggle {
     display: none;
-    font-size: 1.5em;
-    color: #fff;
+    font-size: 30px;
+    color: white;
     cursor: pointer;
 }
 
 @media (max-width: 768px) {
     .navbar ul {
         display: none;
-        flex-direction: column;
         width: 100%;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        top: 60px;
+        left: 0;
         background-color: #333;
+        padding: 10px 0;
     }
 
-    .navbar ul.active {
+    .navbar.active ul {
         display: flex;
     }
 
-    .navbar ul li {
+    .navbar li {
         margin: 10px 0;
-        text-align: center;
     }
 
     .menu-toggle {
         display: block;
     }
+    .navbar {
+        justify-content: flex-end;
+    }
 }
+
+@media (max-width: 480px) {
+    .navbar a {
+        font-size: 14px;
+    }
+}
+
+
 
 /*Navbar*/
 .dsdaqp {
@@ -810,7 +830,7 @@ h3 {
 .atractictn {
     width: 450px;
     height: auto;
-    padding: 25px ;
+    padding: 25px;
     background-color: #f3f2f2;
     margin: 15px;
     box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
@@ -819,11 +839,13 @@ h3 {
     justify-content: center;
     flex-direction: column;
     text-align: center;
-    border-bottom: 3px solid #1ecd56; 
+    border-bottom: 3px solid #1ecd56;
 }
-.atractictn h3{
+
+.atractictn h3 {
     margin-bottom: 15px;
 }
+
 .centeralin {
     text-align: center;
     margin-top: auto;
@@ -845,24 +867,31 @@ h3 {
     position: relative;
     margin: 100px 0px 0px 0px;
 }
-.chivay{
+
+.chivay {
     background-image: url('./imagenes/calera.jpg');
 }
-.yanque{
+
+.yanque {
     background-image: url('./imagenes/yanque.gif');
 }
-.cabanaconde{
+
+.cabanaconde {
     background-image: url('./imagenes/cabanaconde.jpg');
 }
-.maca{
+
+.maca {
     background-image: url('./imagenes/maca.jpg');
 }
-.callali{
+
+.callali {
     background-image: url('./imagenes/callali.jpg');
 }
-.sibayo{
+
+.sibayo {
     background-image: url('./imagenes/sibayo.jpg');
 }
+
 .texto {
     position: absolute;
     top: 50%;
@@ -909,20 +938,333 @@ h3 {
     margin: 0px 10px;
     font-weight: bold;
 }
-.dtnccl1 li{
+
+.dtnccl1 li {
     font-size: 20px;
     line-height: 1.8;
 }
-.dtnccl1 strong{
+
+.dtnccl1 strong {
     font-weight: 500;
 }
-.alingphoto{
+
+.alingphoto {
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 30px 0px;
 }
-.alingphoto img{
+
+.alingphoto img {
     width: 100%;
     height: auto;
+}
+
+
+.cambio_idioma {
+    background-color: #333;
+    border-radius: 15px;
+}
+
+.skiptranslate {
+    width: 80%;
+    text-align: right;
+    margin-top: 15px;
+}
+
+@media (min-width: 768px) and (max-width: 1025px) {
+
+    .portadacm,
+    .portada {
+        height: 50vh;
+    }
+
+    .portadacm {
+        align-items: center;
+        justify-content: center;
+    }
+
+    .portadacm h2 {
+        position: relative;
+        top: 0%;
+    }
+
+    .msgbvn {
+        padding: 50px 0px;
+    }
+
+    .tldsc_right {
+        width: 100vw;
+    }
+
+    .crtrtcs {
+        margin: 50px 0px;
+    }
+
+    .ctn_crtrtcs {
+        flex-wrap: wrap;
+
+    }
+
+    .ctn_crtrtcs p {
+        width: 200px;
+    }
+
+    .ctn_crtrtcs1 {
+        margin: 25px;
+    }
+
+    .image-container img {
+        height: 100%;
+    }
+
+    .colca_curiosities {
+        padding: 20px 0px;
+    }
+
+    .carta {
+        width: 300px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .dtlp {
+        width: 80vw;
+        margin: 25px 10vw 50px 10vw;
+    }
+
+    .cmlg {
+        width: 85vw;
+        margin: 0px 7.5vw;
+    }
+
+    .dcrftg_cl {
+        width: 60vw;
+        margin: 40px 20vw;
+    }
+
+    .gall_ftg_cl {
+        width: 85vw;
+        margin: 0px 7.5vw;
+    }
+
+    .img_gall_ftg_cl {
+        width: 280px;
+    }
+
+    .dtnccl {
+        width: 80vw;
+        margin: 0px 10vw;
+        text-align: center;
+    }
+
+    .atractictn {
+        width: 400px;
+    }
+
+    .atracti {
+        padding: 0px 5vw;
+    }
+
+    .dtnccl p {
+        text-align: center;
+    }
+
+    .dtnccl1 {
+        width: 85vw;
+        margin: 0px 7.5vw;
+    }
+
+}
+
+@media (min-width: 430px) and (max-width: 932px) {
+    .portada {
+        width: auto;
+        height: 50vh;
+        background: url(/imagenes/cruz.jpg) center / cover no-repeat;
+
+    }
+
+    .portada_ctn {
+        position: relative;
+        left: 0%;
+    }
+
+    .portada_ctn h1 {
+        font-size: 80px;
+        text-align: center;
+    }
+
+    .division1 {
+        display: none;
+    }
+
+    .imgdcpc_1 {
+        flex-wrap: wrap;
+    }
+
+    .msgbvn {
+        padding-bottom: 50px;
+    }
+
+    .img-container {
+        margin: 5px 20px;
+    }
+
+    .tldsc {
+        display: block;
+    }
+
+    .tldsc_left {
+        width: 100vw;
+        text-align: center;
+        padding: 25px;
+    }
+
+    .tldsc_right {
+        display: none;
+    }
+
+    .crtrtcs {
+        margin-top: 0px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .ctn_crtrtcs {
+        flex-wrap: wrap;
+    }
+
+    .crtrtcs h2 {
+        font-size: 50px;
+        font-weight: bold;
+    }
+
+    .ctn_crtrtcs1 {
+        margin: 15px 25px;
+    }
+
+    .dtscñ h2 {
+        font-size: 50px;
+    }
+
+    .container {
+        width: 50%;
+    }
+
+    .image-container {
+        width: 100%;
+    }
+
+    .image-container img {
+        width: 100% !important;
+        height: 100%;
+    }
+
+    .galery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .colca_curiosities {
+        padding: 50px 25px;
+    }
+
+    .carta {
+        margin: 0px;
+    }
+
+
+
+
+    .portadacm {
+        width: auto;
+        height: 50vh;
+        background: url("https://muniyanahuara.gob.pe/wp-content/uploads/2020/12/pama-can%CC%83.jpg") center / cover no-repeat;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .portada_ctn {
+        position: relative;
+        left: 0%;
+    }
+
+    .portadacm h2 {
+        font-size: 80px;
+        text-align: center;
+        left: 0px;
+    }
+
+    .cabeceracl {
+        padding: 0px;
+    }
+
+    .dtlp {
+        margin: 50px 5vw;
+        width: 90vw;
+    }
+
+    .cmlg {
+        width: 100vw;
+        margin: 0px;
+    }
+
+    .sctctn {
+        width: 100vw;
+    }
+
+    .clh2 {
+        text-align: center;
+    }
+
+    .dsdaqp {
+        flex-direction: column;
+    }
+
+    .dsdaqpctn {
+        width: 100%;
+        padding: 0px 35px;
+    }
+
+    .dcrftg_cl {
+        width: 90vw;
+        margin: 40px 5vw;
+    }
+
+    .division {
+        width: 100%;
+        margin: 0px !important;
+    }
+
+    .dtnccl {
+        margin: 0px 5vw;
+        width: 90vw;
+        padding: 25px 15px;
+    }
+
+    .dtnccl h1 {
+        font-size: 40px;
+    }
+
+    .texto {
+        font-size: 60px;
+    }
+
+    .dtnccl1 {
+        width: 90vw;
+        margin: 0px 5vw;
+        padding: 0px;
+    }
+
+    .dtnccl1 li {
+        margin-left: 15px;
+        line-height: 1.5;
+    }
+
+    p {
+        line-height: 1.5;
+    }
 }
