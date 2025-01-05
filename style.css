@@ -1076,7 +1076,9 @@ h3 {
         width: 85vw;
         margin: 0px 7.5vw;
     }
-
+    .skiptranslate{
+        width: 100vw;
+    }
 }
 
 @media (min-width: 430px) and (max-width: 932px) {
@@ -1266,5 +1268,201 @@ h3 {
 
     p {
         line-height: 1.5;
+    }
+    .skiptranslate{
+        width: 100vw;
+    }
+}
+
+@media (max-width: 430px) {
+    .portada {
+        width: auto;
+        height: 50vh;
+        background: url(/imagenes/cruz.jpg) center / cover no-repeat;
+
+    }
+
+    .portada_ctn {
+        position: relative;
+        left: 0%;
+    }
+
+    .portada_ctn h1 {
+        font-size: 80px;
+        text-align: center;
+    }
+
+    .division1 {
+        display: none;
+    }
+
+    .imgdcpc_1 {
+        flex-wrap: wrap;
+    }
+
+    .msgbvn {
+        padding-bottom: 50px;
+    }
+
+    .img-container {
+        margin: 5px 20px;
+    }
+
+    .tldsc {
+        display: block;
+    }
+
+    .tldsc_left {
+        width: 100vw;
+        text-align: center;
+        padding: 25px;
+    }
+
+    .tldsc_right {
+        display: none;
+    }
+
+    .crtrtcs {
+        margin-top: 0px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .ctn_crtrtcs {
+        flex-wrap: wrap;
+    }
+
+    .crtrtcs h2 {
+        font-size: 50px;
+        font-weight: bold;
+    }
+
+    .ctn_crtrtcs1 {
+        margin: 15px 25px;
+    }
+
+    .dtscñ h2 {
+        font-size: 50px;
+    }
+
+    .container {
+        width: 50%;
+    }
+
+    .image-container {
+        width: 100%;
+    }
+
+    .image-container img {
+        width: 100% !important;
+        height: 100%;
+    }
+
+    .galery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .colca_curiosities {
+        padding: 50px 25px;
+    }
+
+    .carta {
+        margin: 0px;
+    }
+
+
+
+
+    .portadacm {
+        width: auto;
+        height: 50vh;
+        background: url("https://muniyanahuara.gob.pe/wp-content/uploads/2020/12/pama-can%CC%83.jpg") center / cover no-repeat;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .portada_ctn {
+        position: relative;
+        left: 0%;
+    }
+
+    .portadacm h2 {
+        font-size: 80px;
+        text-align: center;
+        left: 0px;
+    }
+
+    .cabeceracl {
+        padding: 0px;
+    }
+
+    .dtlp {
+        margin: 50px 5vw;
+        width: 90vw;
+    }
+
+    .cmlg {
+        width: 100vw;
+        margin: 0px;
+    }
+
+    .sctctn {
+        width: 100vw;
+    }
+
+    .clh2 {
+        text-align: center;
+    }
+
+    .dsdaqp {
+        flex-direction: column;
+    }
+
+    .dsdaqpctn {
+        width: 100%;
+        padding: 0px 35px;
+    }
+
+    .dcrftg_cl {
+        width: 90vw;
+        margin: 40px 5vw;
+    }
+
+    .division {
+        width: 100%;
+        margin: 0px !important;
+    }
+
+    .dtnccl {
+        margin: 0px 5vw;
+        width: 90vw;
+        padding: 25px 15px;
+    }
+
+    .dtnccl h1 {
+        font-size: 40px;
+    }
+
+    .texto {
+        font-size: 60px;
+    }
+
+    .dtnccl1 {
+        width: 90vw;
+        margin: 0px 5vw;
+        padding: 0px;
+    }
+
+    .dtnccl1 li {
+        margin-left: 15px;
+        line-height: 1.5;
+    }
+
+    p {
+        line-height: 1.5;
+    }
+    .skiptranslate{
+        width: 100vw;
     }
 }
