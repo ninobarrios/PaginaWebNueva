@@ -8,8 +8,19 @@
 .crsdd h2,
 body {
     font-family: "Jost", sans-serif;
-}
+    overflow-x: hidden;
 
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    width: 100%;
+    overflow-x: hidden;
+  }
 *,
 .galery {
     box-sizing: border-box;
@@ -1133,6 +1144,8 @@ background-repeat: no-repeat;
 
     .img-container {
         margin: 5px 20px;
+        width: 350px;
+        height: 350px;
     }
 
     .tldsc {
@@ -1347,6 +1360,7 @@ background-repeat: no-repeat;
         margin-top: 0px;
         display: flex;
         flex-direction: column;
+        width: auto;
     }
 
     .ctn_crtrtcs {
@@ -1372,6 +1386,7 @@ background-repeat: no-repeat;
 
     .image-container {
         width: 100%;
+        height: 100%;
     }
 
     .image-container img {
